@@ -27,6 +27,16 @@
         </a>
       </li>
       <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngSwitchCase="true">
+        <a class="nav-link" routerLink="jhi-demo" (click)="collapseNavbar()">
+          <span>
+            <fa-icon icon="home"></fa-icon>
+            <span>DemoPage</span>
+          </span>
+        </a>
+      </li>
+
       <li
         *ngSwitchCase="true"
         ngbDropdown
