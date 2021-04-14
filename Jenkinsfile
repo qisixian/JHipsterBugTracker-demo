@@ -18,6 +18,7 @@ node {
     }
 
     stage('install tools') {
+        //安装基于Node.js的前端构建插件
         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:install-node-and-npm -DnodeVersion=v14.16.0 -DnpmVersion=7.6.3"
     }
 
