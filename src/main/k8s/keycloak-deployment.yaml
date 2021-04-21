@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose --file ../docker/app.yml convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: keycloak
+  name: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: keycloak
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose --file ../docker/app.yml convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: keycloak
+    spec:
+      containers:
+      - args:
+        - -b
+        - 0.0.0.0
+        - -Dkeycloak.migration.action=import
+        - -Dkeycloak.migration.provider=dir
+        - -Dkeycloak.migration.dir=/opt/jboss/keycloak/realm-config
+        - -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
+        - -Djboss.socket.binding.port-offset=1000
+        - -Dkeycloak.profile.feature.upload_scripts=enabled
+        env:
+        - name: DB_VENDOR
+          value: h2
+        - name: KEYCLOAK_PASSWORD
+          value: admin
+        - name: KEYCLOAK_USER
+          value: admin
+        image: jboss/keycloak:12.0.4
+        imagePullPolicy: ""
+        name: keycloak
+        ports:
+        - containerPort: 9080
+        - containerPort: 9443
+        - containerPort: 10990
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

@@ -589,9 +589,17 @@
                     <configuration>
                         <from>
                             <image>adoptopenjdk:11-jre-hotspot</image>
+                            <auth>
+                                <username>sishian</username>
+                                <password>Qsx!!912532</password>
+                            </auth>
                         </from>
                         <to>
-                            <image>jhipsterbugtrackerdemo:latest</image>
+                            <image>docker.io/sishian/jhipsterbugtrackerdemo:latest</image>
+                            <auth>
+                                <username>sishian</username>
+                                <password>Qsx!!912532</password>
+                            </auth>
                         </to>
                         <container>
                             <entrypoint>

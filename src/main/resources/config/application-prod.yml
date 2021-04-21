@@ -52,8 +52,8 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/JHipsterBugTrackerDemo
-    username: JHipsterBugTrackerDemo
+    url: jdbc:postgresql://35.201.215.194:5432/jhipsterbugtrackerdemo
+    username: postgres
     password: 123456
     hikari:
       poolName: Hikari
