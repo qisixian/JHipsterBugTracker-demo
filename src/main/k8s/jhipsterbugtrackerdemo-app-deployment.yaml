@@ -47,7 +47,7 @@ spec:
           value: web_app
         - name: _JAVA_OPTIONS
           value: -Xmx512m -Xms256m
-        image: jhipsterbugtrackerdemo
+        image: sishian/jhipsterbugtrackerdemo:latest
         imagePullPolicy: ""
         name: jhipsterbugtrackerdemo-app
         ports:
