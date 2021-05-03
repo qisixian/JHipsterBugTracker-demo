@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose --file ../docker/app.yml convert
+    kompose.cmd: kompose --file ../docker/jhipster-registry-prod.yml convert
     kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose --file ../docker/app.yml convert
+        kompose.cmd: kompose --file ../docker/jhipster-registry-prod.yml convert
         kompose.version: 1.21.0 (992df58d8)
       creationTimestamp: null
       labels:
@@ -34,7 +34,7 @@ spec:
         - name: SPRING_PROFILES_ACTIVE
           value: dev,api-docs,oauth2
         - name: SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI
-          value: http://keycloak:9080/auth/realms/jhipster
+          value: http://3.112.132.112:9080/auth/realms/jhipster
         - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID
           value: jhipster-registry
         - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET
