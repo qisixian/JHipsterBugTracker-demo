@@ -1,6 +1,9 @@
 #!/usr/bin/env groovy
 
 node {
+    stage('checkout') {
+        checkout scm
+    }
     stage('deploy while kubectl config completely') {
         // sh 'curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"'
         // sh 'ls ~/.local/bin/'
